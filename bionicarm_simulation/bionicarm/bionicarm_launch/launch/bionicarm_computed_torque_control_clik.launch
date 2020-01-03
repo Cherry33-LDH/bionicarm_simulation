@@ -1,0 +1,5 @@
+<launch>
+  <include file="$(find bionicarm_gazebo)/launch/bionicarm_no_fric_no_joint_limit_world.launch" />
+
+  <include file="$(find bionicarm_control)/launch/computed_torque_control_clik.launch" />
+</launch>

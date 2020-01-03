@@ -1,0 +1,35 @@
+bionicarm:
+    joint_state_controller:
+      type: joint_state_controller/JointStateController
+      publish_rate: 1000
+    
+    adaptive_impedance_controller:
+      type: arm_controllers/AdaptiveImpedanceController
+      joints:
+        - joint1
+        - joint2
+        - joint3
+        - joint4
+        - joint5
+
+      root_link: world
+      tip_link: hand
+      
+      bionicarm_joint1:
+        tdc: {mbar: 0.02, r: 10.0, a: 50.0, w: 0.004}
+      bionicarm_joint2: 
+        tdc: {mbar: 0.02, r: 10.0, a: 50.0, w: 0.004}
+      bionicarm_joint3: 
+        tdc: {mbar: 0.01, r: 10.0, a: 50.0, w: 0.004}
+      bionicarm_joint4: 
+        tdc: {mbar: 0.004, r: 10.0, a: 50.0, w: 0.004}
+      bionicarm_joint5: 
+        tdc: {mbar: 0.003, r: 10.0, a: 50.0, w: 0.004}
+
+      aic: {fd: 20.0, m: 5.0, b: 300.0}
+
+      # mode = 0 -> No Filter, Fd(fixed)
+      # mode = 1 -> Filter, Fd(fixed)
+      # mode = 2 -> Filter, Fd(sin)
+
+      mode: 2

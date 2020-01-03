@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find bionicarm_gazebo)/launch/bionicarm_experiment2_world.launch"/>
+
+  <include file="$(find bionicarm_control)/launch/adaptive_impedance_control.launch"/>
+</launch>
+

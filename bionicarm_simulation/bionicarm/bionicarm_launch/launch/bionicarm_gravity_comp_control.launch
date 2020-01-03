@@ -1,0 +1,5 @@
+<launch>
+  <include file="$(find bionicarm_gazebo)/launch/bionicarm_empty_world.launch" />
+
+  <include file="$(find bionicarm_control)/launch/gravity_comp_control.launch" />
+</launch>

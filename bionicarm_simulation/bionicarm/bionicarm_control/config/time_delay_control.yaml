@@ -1,0 +1,15 @@
+bionicarm:
+    joint_state_controller:
+      type: joint_state_controller/JointStateController
+      publish_rate: 1000
+        
+    time_delay_controller:
+      type: arm_controllers/TimeDelayController
+      joints: 
+        - joint1
+        - joint2
+        - joint3
+        - joint4
+        - joint5
+      root_link: world
+      tip_link: hand

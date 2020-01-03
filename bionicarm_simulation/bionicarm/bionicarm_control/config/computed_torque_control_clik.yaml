@@ -1,0 +1,36 @@
+bionicarm:
+    joint_state_controller:
+      type: joint_state_controller/JointStateController
+      publish_rate: 1000
+    
+    computed_torque_controller_clik:
+      type: arm_controllers/Computed_Torque_Controller_CLIK
+      joints:
+        - joint1
+        - joint2
+        - joint3
+        - joint4
+        - joint5
+        
+      gains:
+        bionicarm_joint1: 
+          pid: {p: 100.0, i: 0, d: 20.0}
+        bionicarm_joint2: 
+          pid: {p: 100.0, i: 0, d: 20.0}
+        bionicarm_joint3: 
+          pid: {p: 100.0, i: 0, d: 20.0}
+        bionicarm_joint4: 
+          pid: {p: 100.0, i: 0, d: 20.0}
+        bionicarm_joint5: 
+          pid: {p: 100.0, i: 0, d: 20.0}
+
+      root_link: world
+      tip_link: hand
+
+      ctr_obj: 1  # ctr_obj = 1: Regulation 
+                  # ctr_obj = 2: Tracking
+                  
+      ik_mode: 2 # open-loop inverse kinematics using jacobian
+                 # closed-loop inverse Kinematics using jacobian
+
+      clik_gain: {K_regulation: 6.0, K_tracking: 1.0}
